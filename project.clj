@@ -7,7 +7,7 @@
                  [ring-server "0.3.1"]
                  [postgresql/postgresql "9.1-901.jdbc4"]
                  [org.clojure/java.jdbc "0.2.3"]
-                 [clj-pdf "1.11.6"]]
+                 [clj-pdf "2.0.9"]]
   :plugins [[lein-ring "0.8.12"]]
   :ring {:handler charlie.handler/app
          :init charlie.handler/init

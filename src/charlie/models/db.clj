@@ -15,18 +15,17 @@
     [:place "varchar(50)"]
     [:country "varchar(50)"]))
 
-(sql/with-connection
-  db
-  (create-employee-table)
-  (sql/insert-rows
-   :employee
-  ["Hal Ashby", "Director", "Hollywood", "USA"]
-  ["Stanley Kubrick", "Director", "London", "England"]
-  ["Francis Ford Coppola", "Director", "St. Helena", "USA"]
-  ["David Lead", "Director", "London", "England"]
-  ["Wes Anderson", "Director", "New York", "USA"]))
+;(sql/with-connection
+  ;db
+  ;(create-employee-table)
+  ;(sql/insert-rows
+   ;:employee
+  ;["Hal Ashby", "Director", "Hollywood", "USA"]
+  ;["Stanley Kubrick", "Director", "London", "England"]
+  ;["Francis Ford Coppola", "Director", "St. Helena", "USA"]
+  ;["David Lean", "Director", "London", "England"]
+  ;["Wes Anderson", "Director", "New York", "USA"]))
 
 (defn read-employees []
   (sql/with-connection db
     (sql/with-query-results rs ["select * from employee"] (doall rs))))
-
